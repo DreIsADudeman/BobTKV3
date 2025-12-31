@@ -9,8 +9,10 @@ import requests
 import time
 import datetime
 import random
-import winsound
 import os
+# check if on Windows for winsound
+if os.name == 'nt':
+    import winsound
 from threading import Lock
 from dotenv import load_dotenv
 
@@ -42,10 +44,10 @@ canvas.pack(fill=BOTH, expand=True)
 
 # --- Load images ---
 try:
-    normal = PhotoImage(file="./NormalBob.png")
-    happy = PhotoImage(file="./HappyBob.png")
-    annoyed = PhotoImage(file="./AnnoyedBob.png")
-    fixing = PhotoImage(file="./FixingBob.png")
+    normal =  PhotoImage(file="./Image/NormalBob.png")
+    happy =   PhotoImage(file="./Image/HappyBob.png")
+    annoyed = PhotoImage(file="./Image/AnnoyedBob.png")
+    fixing =  PhotoImage(file="./Image/FixingBob.png")
 except:
     normal = PhotoImage(width=100, height=100)
     happy = annoyed = fixing = normal
